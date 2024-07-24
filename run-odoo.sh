@@ -1,10 +1,10 @@
 #!/bin/bash
 
-clear
-printf "\033c"
+# clear
+# printf "\033c"
 # Activate the virtual environment
-echo "Activating virtual environment..."
-source ./venv/bin/activate
+# echo "Activating virtual environment..."
+# source ./venv/bin/activate
 
 # Kill existing Odoo processes
 # echo "Killing existing Odoo processes..."
@@ -21,4 +21,4 @@ find . -name "__pycache__" -type d -exec rm -r {} +
 
 # Start the Odoo server and show logs
 echo "Starting Odoo server..."
-./odoo-bin -c odoo.conf -u all
+./odoo-bin -d odoo -c odoo.conf -i base,web --dev=xml

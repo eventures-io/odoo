@@ -2,7 +2,7 @@
 
 source ./venv/bin/activate
 
-./odoo-bin -u all -d odoo
+./odoo-bin -u all -d odoo --dev=xml
 
 
 
