@@ -2,6 +2,6 @@
 <templates xml:space="preserve">
     <t t-name="rag_bot.InputView">
         <strong>Type here:</strong> 
-        <textarea name="chatInput" className="form-control ml-3"  t-ref="inputRef" rows="3" cols="30"></textarea>
+        <textarea name="chatInput" t-on-keyup="submitInput"  className="form-control ml-3"  t-ref="inputRef" rows="3" cols="30"></textarea>
     </t>
 </templates>

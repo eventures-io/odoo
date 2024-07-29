@@ -12,6 +12,9 @@ export class TodoList extends Component {
         this.nextId = 0;
         this.todos = useState([]);
         useAutofocus("input")
+        onMounted(() => {
+            console.log("Todolist Component mounted, state initialized:", this.state);
+        });
     }
 
     addTodo(ev) {

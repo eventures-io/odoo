@@ -2,6 +2,6 @@
 <templates xml:space="preserve">
     <t t-name="rag_bot.ChatView">
         hello chat
-        <t t-call="rag_bot.InputView"/>
+        <ChatInput/>
     </t>
 </templates>

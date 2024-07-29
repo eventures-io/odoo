@@ -1,0 +1,19 @@
+<odoo>
+    <data>
+        <template id="react_bot.view" name="React View">
+            <t t-call="website.layout">
+                <h1>React in website layout</h1>
+                <div id="react-root"></div>
+                <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+                <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+                <script type="text/javascript">
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const rootElement = document.getElementById('react-root');
+                        ReactDOM.render(React.createElement('h1', null, 'Hello from React'), rootElement);
+                    });
+                </script>
+            </t>
+        </template>
+    </data>
+</odoo>
+
