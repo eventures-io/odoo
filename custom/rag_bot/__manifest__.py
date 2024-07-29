@@ -3,11 +3,11 @@
     'name': "Rag Bot",
 
     'summary': """
-        
+        Short summary of the module's purpose
     """,
 
     'description': """
-        
+        Long description of the module's purpose
     """,
 
     'author': "Odoo",
@@ -22,16 +22,11 @@
         'views/views.xml',
     ],
     'assets': {
-        
         'web.assets_backend': [
-              ('include', 'web._assets_helpers'),
+            ('include', 'web._assets_helpers'),
             'web/static/src/scss/pre_variables.scss',
             'web/static/lib/bootstrap/scss/_variables.scss',
-            ('include', 'web._assets_bootstrap_backend'),
-
-            # required for fa icons
-            'web/static/src/libs/fontawesome/css/font-awesome.css',
-            
+            ('include', 'web._assets_bootstrap'),            
             # include base files from framework
             ('include', 'web._assets_core'),
 
@@ -43,5 +38,6 @@
             'rag_bot/static/src/**/*',
         ],
     },
-    'license': 'AGPL-3'
+    'license': 'AGPL-3',
 }
+
