@@ -4,9 +4,15 @@
       <field name="name">Chatbot</field>
       <field name="tag">rag_bot.chat</field>
     </record>
+
+     <!-- <record model="ir.actions.client" id="rag_bot.test">
+      <field name="name">Test Action</field>
+      <field name="tag">rag_bot.test</field>
+    </record> -->
     
     <menuitem name="Ragbot" id="rag_bot.menu_root" groups="base.group_user" web_icon="rag_bot,static/description/icon.png"/>
     <menuitem name="Chat" id="rag_bot.chat_menu" parent="rag_bot.menu_root"  action="rag_bot.chat" sequence="1"/>
+    <!-- <menuitem name="Test" id="rag_bot.test_menu" parent="rag_bot.menu_root"  action="rag_bot.test" sequence="2"/> -->
     
   </data>
 </odoo>
