@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <templates xml:space="preserve">
     <t t-name="rag_bot.ChatView">
-    <button class="btn btn-default mb-3">Default button</button>
+    <!-- <button class="btn btn-default mb-3">Default button</button> -->
         <ChatInput/>
     </t>
 </templates>

@@ -16,8 +16,9 @@ export class ChatInput extends Component {
     }
 
     async submitInput(ev) {
+        ev.preventDefault(); // Prevent default action of adding a newline does not work
         if (ev.key === 'Enter') {
-            ev.preventDefault(); // Prevent default action of adding a newline does not work
+         
             console.log('ev', ev);
             this.state.chatInputText = ev.target.value;
             console.log("state updated:", this.state.chatInputText);
@@ -42,5 +43,3 @@ export class ChatInput extends Component {
         }
     }
 }
-
-// ChatInput.template = "rag_bot.InputView";
