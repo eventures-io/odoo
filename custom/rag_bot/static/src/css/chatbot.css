@@ -1,0 +1,16 @@
+.input-wrapper {
+   max-width: 50rem;
+   margin: 0 3rem;
+}
+
+.output-wrapper {
+  display: flex;
+  justify-content: end;
+
+}
+
+.output {
+    max-width: 50rem;
+    margin: 0 3rem;
+    
+}

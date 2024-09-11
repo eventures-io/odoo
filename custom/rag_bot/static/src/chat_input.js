@@ -6,8 +6,9 @@ export class ChatInput extends Component {
     static template = "rag_bot.InputView";
 
     setup() {
-        this.state = useState({ chatInputText: "" });
+        this.state = useState({ chatInputText: "", responseText: ""  });
         this.inputRef = useRef('inputRef');
+        this.outputRef = useRef('responseRef');
 
         onMounted(() => {
             console.log("Component mounted, state initialized:", this.state);
@@ -34,8 +35,18 @@ export class ChatInput extends Component {
                     },
                     body: JSON.stringify(payload)
                 });
-                const result = await response.json();
-                console.log('Backend response:', result);
+                const jsonResponse = await response.json();
+                console.log('Backend response:', jsonResponse);
+                    // Update the state with the response to display it in the UI
+                    if (jsonResponse.result.status === "success") {
+                        this.state.responseText = JSON.stringify(jsonResponse.result.response);
+                    } else {
+                        this.state.responseText = "Error processing input.";
+                    }
+    
+                    // Clear the input field
+                    this.inputRef.el.value = ""; 
+                    this.outputRef.el.textContent = this.state.responseText
             } catch (error) {
                 console.error('Error sending input to backend:', error);
             }
