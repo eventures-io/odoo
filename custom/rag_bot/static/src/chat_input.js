@@ -2,6 +2,15 @@
 
 import { Component, useState, onMounted, useRef } from "@odoo/owl";
 
+function extractContent(responseString) {
+        const contentMatch = responseString.match(/content="([^"]*)"/);
+        return contentMatch ? contentMatch[1] : responseString;
+}
+
+function formatTextWithLineBreaks(text) {
+    return text.replace(/\n/g, '<br>'); 
+}
+    
 export class ChatInput extends Component {
     static template = "rag_bot.InputView";
 
@@ -39,14 +48,17 @@ export class ChatInput extends Component {
                 console.log('Backend response:', jsonResponse);
                     // Update the state with the response to display it in the UI
                     if (jsonResponse.result.status === "success") {
-                        this.state.responseText = JSON.stringify(jsonResponse.result.response);
+                        this.state.responseText = extractContent(jsonResponse.result.response);
                     } else {
                         this.state.responseText = "Error processing input.";
                     }
     
                     // Clear the input field
                     this.inputRef.el.value = ""; 
-                    this.outputRef.el.textContent = this.state.responseText
+                    this.outputRef.el.innerHTML = formatTextWithLineBreaks(this.state.responseText)
+
+                    // Display the content in an HTML element (responseRef)
+                    // document.querySelector('[t-ref="responseRef"]').textContent = extractContent(responseString);
             } catch (error) {
                 console.error('Error sending input to backend:', error);
             }

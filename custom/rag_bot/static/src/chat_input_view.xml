@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <templates xml:space="preserve">
     <t t-name="rag_bot.InputView">
-        <strong>Type here:</strong> 
               <div class="input-wrapper">
             <textarea name="chatInput" t-on-keyup="submitInput" class="form-control" t-ref="inputRef" rows="3" cols="30"></textarea>
         </div>
-    <strong>Response:</strong>  
     <div  class="output-wrapper">
         <div t-ref="responseRef" class="output"/>
     </div>

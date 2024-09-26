@@ -1,6 +1,6 @@
 .input-wrapper {
    max-width: 50rem;
-   margin: 0 3rem;
+   margin: 1rem 3rem;
 }
 
 .output-wrapper {
@@ -12,5 +12,8 @@
 .output {
     max-width: 50rem;
     margin: 0 3rem;
-    
+    background-color: rgb(222, 222, 222);
+    border-radius: .5rem;
+    padding: 1rem;
+
 }
