@@ -3,6 +3,7 @@ from odoo import api, SUPERUSER_ID
 from openai import OpenAI
 import os
 from dotenv import load_dotenv
+from ..
 
 load_dotenv()
 
@@ -51,6 +52,10 @@ class LLMService:
         )
         
         return(completion.choices[0].message)
+
+
+    def call_sql_agent(self, message):
+
 
 
 

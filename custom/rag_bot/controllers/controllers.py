@@ -14,8 +14,8 @@ class ChatController(http.Controller):
         input_text = kwargs.get('input')
         logging.info(f'ChatController input received: {kwargs}, {input_text}');
         llmService = LLMService(request.env)
-        response = llmService.call_llm(input_text)
-        # response = llmService.execute_db_query()
+        # response = llmService.call_llm(input_text)
+        response = llmService.execute_db_query()
         # print('Received response from the LLM service: %s', response)
            
         return {'status': 'success',
