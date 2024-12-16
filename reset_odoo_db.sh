@@ -1,20 +1,18 @@
 #!/bin/bash
 
 # Variables (replace these with your actual values)
-PGUSER="psymoens"
-PGPASSWORD="psymoens"
+PGUSER="odoo_pg"
+PGPASSWORD="odoo_pg"
 DBNAME="odoo"
 DBUSER="odoo"
 DBUSERPASSWORD="odoo"
 
+# Export PGUSER and PGPASSWORD for psql commands
+export PGUSER PGPASSWORD
+
 # Function to execute a SQL command as the PostgreSQL superuser
 execute_sql() {
   psql -U $PGUSER -d postgres -c "$1"
-}
-
-# Function to execute a SQL command on a specific database
-execute_sql_db() {
-  psql -U $PGUSER -d $DBNAME -c "$1"
 }
 
 # Drop the database and user if they exist
@@ -47,6 +45,3 @@ GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO $DBUSER;
 EOF
 
 echo "Database and user setup completed."
-
-# echo "Starting the server"
-# ./odoo-bin -d odoo -c odoo.conf -i base,web 
